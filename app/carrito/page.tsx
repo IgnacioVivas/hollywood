@@ -1,3 +1,4 @@
+// Tienda: página pausada, no está enlazada desde el sitio hasta que Hollywood venda online.
 import type { Metadata } from "next";
 import { CartView } from "@/components/cart-view";
 

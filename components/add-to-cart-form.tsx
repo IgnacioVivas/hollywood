@@ -39,7 +39,7 @@ export function AddToCartForm({ product }: { product: Product }) {
                 type="button"
                 onClick={() => setSize(option)}
                 className={cn(
-                  "rounded-md border px-3 py-1.5 text-sm transition-colors",
+                  "cursor-pointer rounded-md border px-3 py-1.5 text-sm transition-colors",
                   option === size
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border hover:border-foreground/40",
@@ -67,7 +67,7 @@ export function AddToCartForm({ product }: { product: Product }) {
         <button
           type="button"
           onClick={() => router.push("/carrito")}
-          className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          className="cursor-pointer text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
         >
           Ver carrito →
         </button>

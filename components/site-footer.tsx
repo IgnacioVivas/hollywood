@@ -4,18 +4,14 @@ import {
   SiInstagram,
   SiWhatsapp,
 } from "@icons-pack/react-simple-icons";
+import { BrandLogo } from "@/components/brand-logo";
 import { contact } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-background">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="font-heading text-lg tracking-wide text-foreground">
-            HOLLYWOOD
-          </p>
-          <p>Gorras, sombreros y boinas — Córdoba, Argentina</p>
-        </div>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:justify-between">
+        <BrandLogo variant="algo-diferente" className="h-10 w-auto shrink-0" />
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link
             href={contact.whatsappUrl}

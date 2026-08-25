@@ -60,7 +60,7 @@ export function CartView() {
                   <div className="flex items-center rounded-md border border-border">
                     <button
                       type="button"
-                      className="flex size-8 items-center justify-center text-muted-foreground hover:text-foreground"
+                      className="flex size-8 cursor-pointer items-center justify-center text-muted-foreground hover:text-foreground"
                       onClick={() =>
                         updateQuantity(item.productId, item.size, item.quantity - 1)
                       }
@@ -73,7 +73,7 @@ export function CartView() {
                     </span>
                     <button
                       type="button"
-                      className="flex size-8 items-center justify-center text-muted-foreground hover:text-foreground"
+                      className="flex size-8 cursor-pointer items-center justify-center text-muted-foreground hover:text-foreground"
                       onClick={() =>
                         updateQuantity(item.productId, item.size, item.quantity + 1)
                       }
@@ -86,7 +86,7 @@ export function CartView() {
                   <button
                     type="button"
                     onClick={() => removeItem(item.productId, item.size)}
-                    className="text-muted-foreground hover:text-destructive"
+                    className="cursor-pointer text-muted-foreground hover:text-destructive"
                     aria-label="Quitar del carrito"
                   >
                     <Trash2 className="size-4" />

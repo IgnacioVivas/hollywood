@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Anton, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/components/providers";
-import { TopBar } from "@/components/top-bar";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsappFloatButton } from "@/components/whatsapp-float-button";
+import { StructuredData } from "@/components/structured-data";
+import { siteUrl, siteName, siteDescription } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -17,18 +19,42 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const anton = Anton({
+const artegraSuprema = localFont({
+  src: [
+    { path: "./fonts/artegra-suprema-thin.otf", weight: "100", style: "normal" },
+    { path: "./fonts/artegra-suprema-thin-italic.otf", weight: "100", style: "italic" },
+  ],
   variable: "--font-heading",
-  weight: "400",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Hollywood — Gorras y Sombreros",
+    default: siteName,
     template: "%s — Hollywood",
   },
-  description: "Hollywood, algo diferente. Gorras y sombreros en Córdoba, Argentina.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: siteUrl,
+    siteName,
+    title: siteName,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -36,11 +62,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${artegraSuprema.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <StructuredData />
         <Providers>
-          <TopBar />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

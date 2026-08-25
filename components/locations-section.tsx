@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export function LocationsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
+    <section id="ubicacion" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-16">
       <h2 className="font-heading mb-8 text-3xl tracking-wide">
         Dónde encontrarnos
       </h2>
@@ -21,6 +21,9 @@ export function LocationsSection() {
                 <p className="font-medium">{location.name}</p>
                 <p className="text-sm text-muted-foreground">
                   {location.address}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {location.hoursText}
                 </p>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`}
@@ -45,7 +48,7 @@ export function LocationsSection() {
           </Link>
         </div>
 
-        <div className="h-80 overflow-hidden rounded-xl border border-border md:h-auto">
+        <div className="isolate h-80 overflow-hidden rounded-xl border border-border md:h-auto">
           <StoreMapLoader />
         </div>
       </div>

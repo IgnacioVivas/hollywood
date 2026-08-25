@@ -53,7 +53,7 @@ function Pill({
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-md border px-3 py-1.5 text-sm transition-colors",
+        "cursor-pointer rounded-md border px-3 py-1.5 text-sm transition-colors",
         active
           ? "border-primary bg-primary text-primary-foreground"
           : "border-border hover:border-foreground/40",
