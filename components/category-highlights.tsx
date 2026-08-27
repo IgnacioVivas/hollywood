@@ -44,8 +44,14 @@ export function CategoryHighlights() {
               height={category.height}
               className="h-28 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="font-heading text-xl tracking-wide">
-              {category.label}
+            <span className="flex flex-col items-center gap-2">
+              <span className="h-[3px] w-10 rounded-full bg-primary transition-all duration-300 group-hover:w-16" />
+              <span className="font-heading text-2xl tracking-wide transition-colors group-hover:text-primary">
+                {category.label}
+              </span>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Consultanos por WhatsApp
+              </span>
             </span>
           </Link>
         ))}
