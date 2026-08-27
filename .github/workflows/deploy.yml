@@ -27,13 +27,13 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      # Publica el contenido de out/ en la rama "deploy" (un único commit cada vez).
+      # Publica el contenido de out/ en la rama "deploy".
       # DonWeb/Ferozo se conecta a esta rama, no a main, ya que su integración de Git
-      # solo clona archivos, no ejecuta un build.
+      # solo clona archivos, no ejecuta un build. Historia lineal (sin force_orphan):
+      # Ferozo sincroniza con "git pull", que necesita poder hacer fast-forward.
       - name: Publish to deploy branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: deploy
-          force_orphan: true
