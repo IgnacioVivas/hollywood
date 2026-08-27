@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  SiFacebook,
-  SiInstagram,
-  SiWhatsapp,
-} from "@icons-pack/react-simple-icons";
+import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { BrandLogo } from "@/components/brand-logo";
 import { contact } from "@/lib/contact";
 
@@ -30,15 +26,6 @@ export function SiteFooter() {
           >
             <SiInstagram size={16} />
             {contact.instagramHandle}
-          </Link>
-          <Link
-            href={contact.facebookUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-colors hover:text-foreground"
-          >
-            <SiFacebook size={16} />
-            Facebook
           </Link>
         </div>
       </div>

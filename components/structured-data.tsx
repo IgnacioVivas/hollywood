@@ -29,7 +29,7 @@ export function StructuredData() {
       opens: period.opens,
       closes: period.closes,
     })),
-    sameAs: [contact.instagramUrl, contact.facebookUrl],
+    sameAs: [contact.instagramUrl],
   }));
 
   return (

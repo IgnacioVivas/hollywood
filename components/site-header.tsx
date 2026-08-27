@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  SiFacebook,
-  SiInstagram,
-  SiWhatsapp,
-} from "@icons-pack/react-simple-icons";
+import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { BrandLogo } from "@/components/brand-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { contact } from "@/lib/contact";
@@ -11,7 +7,6 @@ import { contact } from "@/lib/contact";
 const SOCIAL_LINKS = [
   { href: contact.whatsappUrl, label: "WhatsApp", Icon: SiWhatsapp },
   { href: contact.instagramUrl, label: "Instagram", Icon: SiInstagram },
-  { href: contact.facebookUrl, label: "Facebook", Icon: SiFacebook },
 ];
 
 export function SiteHeader() {
