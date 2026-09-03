@@ -16,7 +16,7 @@ export const heroSlides: HeroSlide[] = [
     id: "bienvenida",
     title: "Hollywood, algo diferente",
     image: "/photos/hero-bienvenida.jpg",
-    focalX: 65,
+    focalX: 75,
     ctaLabel: "Cómo llegar",
     ctaHref: "#ubicacion",
   },
