@@ -1,1 +1,14 @@
 ErrorDocument 404 /404.html
+
+# Una sola versión del sitio para Google: todo redirige (301) a https://www.
+RewriteEngine On
+
+# http → https (la segunda condición evita un bucle si el hosting termina el
+# SSL en un proxy y Apache recibe la petición como http)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://www.hollywoodgorras.com%{REQUEST_URI} [L,R=301]
+
+# sin www → www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.hollywoodgorras.com%{REQUEST_URI} [L,R=301]
