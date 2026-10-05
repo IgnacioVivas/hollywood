@@ -9,6 +9,6 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://www.hollywoodgorras.com%{REQUEST_URI} [L,R=301]
 
-# sin www → www
-RewriteCond %{HTTP_HOST} !^www\. [NC]
+# cualquier otro dominio (sin www, .online, .store) → www.hollywoodgorras.com
+RewriteCond %{HTTP_HOST} !^www\.hollywoodgorras\.com$ [NC]
 RewriteRule ^ https://www.hollywoodgorras.com%{REQUEST_URI} [L,R=301]
